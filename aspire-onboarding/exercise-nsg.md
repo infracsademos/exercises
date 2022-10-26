@@ -4,6 +4,8 @@ As the solution architect for the manufacturing company, you now want to start m
 
 In this unit, you'll configure a network security group and security rules to restrict network traffic to specific servers. You want your app server to be able to connect to your database server over HTTP. You don't want the database server to be able to use HTTP to connect to the app server.
 
+![image info](./pictures/image.png)
+
 Diagram of exercise scenario network security groups.
 
 ## Create a virtual network and network security group
@@ -98,11 +100,11 @@ az vm list \
 
 When your VM creation is complete, you should see the following output.
 
+| Name | Provisioned | Power  |
+|---|---|---|
+| AppServer  | Succeeded  | VM running  |
+| DataServer | Succeeded  | VM running  |
 
-Name        Provisioned    Power
-----------  -------------  ----------
-AppServer   Succeeded      VM running
-DataServer  Succeeded      VM running
 
 ## Check default connectivity
 
