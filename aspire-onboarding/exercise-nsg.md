@@ -4,7 +4,7 @@ As the solution architect for the manufacturing company, you now want to start m
 
 In this unit, you'll configure a network security group and security rules to restrict network traffic to specific servers. You want your app server to be able to connect to your database server over HTTP. You don't want the database server to be able to use HTTP to connect to the app server.
 
-![image info](./pictures/image.png)
+![image info](./pics/image.png)
 
 Diagram of exercise scenario network security groups.
 
@@ -156,9 +156,10 @@ Remember that the default rules deny all inbound traffic into a virtual network,
 
 ### Inbound
 
-Name	Priority	Source IP	Destination IP	Access
-Allow VNet Inbound	65000	VIRTUAL_NETWORK	VIRTUAL_NETWORK	Allow
-Deny All Inbound	65500	*	*	Deny
+| Name | Priority | Source IP | Destination IP | Access |
+|---|---|---|---|---|
+| Allow VNet Inbound | 65000 | VIRTUAL_NETWORK | VIRTUAL_NETWORK | Allow |
+| Deny All Inbound | 65500 | * | * | Deny |
 
 ## Create a security rule for SSH
 
@@ -196,9 +197,10 @@ ssh azureuser@$DATASERVERIP -o ConnectTimeout=5
 
 Now, add a rule so that AppServer can communicate with DataServer over HTTP, but DataServer can't communicate with AppServer over HTTP. These are the internal IP addresses for these servers:
 
-Server name	IP address
-AppServer	10.0.0.4
-DataServer	10.0.1.4
+| Server name | IP address |
+| ---- | ---- |
+| AppServer | 10.0.0.4 |
+| DataServer | 10.0.1.4 |
 
 1. YOUR TURN - create a new inbound security rule to deny HTTP access over port 80.
 
